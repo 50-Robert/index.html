@@ -1,0 +1,194 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #87CEEB;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  background-color: #ff0000;
+  padding: 20px;
+  border: 3px solid #000;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.header .container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #ca270a;
+  color: white;
+  border: 2px solid #000;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #FF4500;
+}
+
+/* Summary Cards */
+.summary {
+  background-color: #ffffff;
+  border: 3px solid #000;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.summary table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.summary td {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid #000;
+}
+
+.summary .label {
+  background-color: #FFFFE0;
+  font-size: 14px;
+}
+
+.summary .value {
+  background-color: white;
+  font-size: 24px;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+/* Section */
+.section {
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 28px;
+  background-color: #b42e2e;
+  padding: 10px;
+  border: 3px solid #000;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Stock Table */
+#stocksList table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border: 3px solid #000;
+}
+
+#stocksList th {
+  background-color: #DDA0DD;
+  padding: 12px;
+  border: 2px solid #000;
+  font-size: 16px;
+}
+
+#stocksList td {
+  padding: 12px;
+  border: 2px solid #a32828;
+  text-align: center;
+  font-size: 14px;
+}
+
+#stocksList tr:nth-child(even) {
+  background-color: #F0F0F0;
+}
+
+.positive {
+  color: green;
+  font-weight: bold;
+}
+
+.negative {
+  color: red;
+  font-weight: bold;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal.active {
+  display: block;
+}
+
+.modal-content {
+  background-color: #FFB6C1;
+  border: 4px solid #000;
+  padding: 30px;
+  width: 400px;
+  margin: 100px auto;
+}
+
+.modal-header {
+  margin-bottom: 20px;
+}
+
+.modal-header h3 {
+  font-size: 24px;
+  display: inline-block;
+}
+
+.close-btn {
+  background-color: #FF0000;
+  color: white;
+  border: 2px solid #000;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 12px;
+  float: right;
+}
+
+.close-btn:hover {
+  background-color: #CC0000;
+}
+
+/* Form */
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #000;
+  font-size: 14px;
+}
+
+form button {
+  width: 100%;
+}

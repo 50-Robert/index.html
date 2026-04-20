@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Portfolio</title>
+  <link rel="stylesheet" href="5.1.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <h1>📈 My Portfolio</h1>
+      <button class="btn-primary" id="addBtn">+ Add Stock</button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Summary Cards -->
+    <div class="summary">
+      <div class="card">
+        <div class="label">Total Value</div>
+        <div class="value large">$68,363</div>
+      </div>
+      <div class="card">
+        <div class="label">Total Gain</div>
+        <div class="value large green">+$10,163</div>
+      </div>
+      <div class="card">
+        <div class="label">Stocks</div>
+        <div class="value large">6</div>
+      </div>
+    </div>
+
+    <!-- Holdings List -->
+    <div class="section">
+      <h2>My Stocks</h2>
+      <div id="stocksList"></div>
+    </div>
+  </main>
+
+  <!-- Add Stock Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Add Stock</h3>
+        <button class="close-btn" id="closeBtn">&times;</button>
+      </div>
+      <form id="stockForm">
+        <input type="text" id="symbol" placeholder="Stock Symbol (e.g., AAPL)" required>
+        <input type="number" id="shares" placeholder="Number of Shares" min="1" step="1" required>
+        <input type="number" id="price" placeholder="Price per Share" min="0" step="0.01" required>
+        <button type="submit" class="btn-primary">Add Stock</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="5.1.js"></script>
+</body>
+</html>
