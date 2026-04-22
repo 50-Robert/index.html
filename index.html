@@ -19,18 +19,24 @@
   <main class="container">
     <!-- Summary Cards -->
     <div class="summary">
-      <div class="card">
-        <div class="label">Total Value</div>
-        <div class="value large">$68,363</div>
-      </div>
-      <div class="card">
-        <div class="label">Total Gain</div>
-        <div class="value large green">+$10,163</div>
-      </div>
-      <div class="card">
-        <div class="label">Stocks</div>
-        <div class="value large">6</div>
-      </div>
+      <table>
+        <tr>
+          <td class="label">Total Value</td>
+          <td class="label">Total Gain</td>
+          <td class="label">Stocks</td>
+        </tr>
+        <tr>
+          <td class="value">$68,363</td>
+          <td class="value green">+$10,163</td>
+          <td class="value">6</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Trending Stocks -->
+    <div class="trending-section">
+      <h3>🔥 Trending Stocks Today</h3>
+      <div class="trending-stocks" id="trendingStocks"></div>
     </div>
 
     <!-- Holdings List -->
