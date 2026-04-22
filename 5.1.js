@@ -8,6 +8,16 @@ const stocks = [
   { symbol: "JPM", name: "JPMorgan Chase", shares: 45, avgCost: 140, currentPrice: 158.20 }
 ];
 
+// Trending stocks data
+const trendingStocks = [
+  { symbol: "AMD", price: 142.35, change: 8.5 },
+  { symbol: "NFLX", price: 521.80, change: -2.3 },
+  { symbol: "DIS", price: 98.45, change: 5.2 },
+  { symbol: "COIN", price: 215.60, change: 12.8 },
+  { symbol: "SPOT", price: 187.90, change: -4.1 },
+  { symbol: "UBER", price: 68.25, change: 3.7 }
+];
+
 // Modal controls
 const modal = document.getElementById('modal');
 const addBtn = document.getElementById('addBtn');
@@ -43,33 +53,66 @@ form.addEventListener('submit', (e) => {
   modal.classList.remove('active');
 });
 
+// Render trending stocks
+function renderTrendingStocks() {
+  const container = document.getElementById('trendingStocks');
+  
+  let html = '';
+  trendingStocks.forEach(stock => {
+    const isPositive = stock.change >= 0;
+    html += `
+      <div class="trending-stock">
+        <div class="symbol">${stock.symbol}</div>
+        <div class="price">$${stock.price.toFixed(2)}</div>
+        <div class="change ${isPositive ? 'positive' : 'negative'}">
+          ${isPositive ? '+' : ''}${stock.change.toFixed(1)}%
+        </div>
+      </div>
+    `;
+  });
+  
+  container.innerHTML = html;
+}
+
 // Render stocks
 function renderStocks() {
   const container = document.getElementById('stocksList');
   
-  container.innerHTML = stocks.map(stock => {
+  let tableHTML = `
+    <table>
+      <tr>
+        <th>Symbol</th>
+        <th>Name</th>
+        <th>Shares</th>
+        <th>Value</th>
+        <th>Gain/Loss</th>
+      </tr>
+  `;
+
+  stocks.forEach(stock => {
     const totalValue = stock.currentPrice * stock.shares;
     const totalCost = stock.avgCost * stock.shares;
     const gain = totalValue - totalCost;
     const gainPercent = ((stock.currentPrice - stock.avgCost) / stock.avgCost) * 100;
     const isPositive = gain >= 0;
-    
-    return `
-      <div class="stock-item">
-        <div class="stock-info">
-          <h3>${stock.symbol}</h3>
-          <p>${stock.name} • ${stock.shares} shares</p>
-        </div>
-        <div class="stock-details">
-          <div class="stock-value">$${totalValue.toLocaleString()}</div>
-          <div class="stock-gain ${isPositive ? 'positive' : 'negative'}">
-            ${isPositive ? '+' : ''}$${Math.abs(gain).toFixed(0)} (${gainPercent.toFixed(1)}%)
-          </div>
-        </div>
-      </div>
+
+    tableHTML += `
+      <tr>
+        <td><b>${stock.symbol}</b></td>
+        <td>${stock.name}</td>
+        <td>${stock.shares}</td>
+        <td>$${totalValue.toLocaleString()}</td>
+        <td class="${isPositive ? 'positive' : 'negative'}">
+          ${isPositive ? '+' : ''}$${Math.abs(gain).toFixed(0)} (${gainPercent.toFixed(1)}%)
+        </td>
+      </tr>
     `;
-  }).join('');
+  });
+
+  tableHTML += '</table>';
+  container.innerHTML = tableHTML;
 }
 
 // Initialize
+renderTrendingStocks();
 renderStocks();
